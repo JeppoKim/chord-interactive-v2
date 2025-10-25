@@ -1,0 +1,204 @@
+.intro {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.intro.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.intro-content {
+  text-align: center;
+  z-index: 10;
+  padding: 2rem;
+  max-width: 600px;
+}
+
+/* 헤더 */
+.intro-header {
+  margin-bottom: 4rem;
+  animation: fadeInDown 1s ease-out 0.2s both;
+}
+
+.intro-title {
+  font-size: 3.5rem;
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.intro-subtitle {
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: #666;
+  letter-spacing: 0.05em;
+}
+
+/* 메인 콘텐츠 */
+.intro-main {
+  margin-bottom: 3rem;
+}
+
+.floating-shape {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2.5rem;
+  position: relative;
+  animation: float 3s ease-in-out infinite, fadeIn 1s ease-out 0.4s both;
+}
+
+.shape-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  animation: morph 8s ease-in-out infinite;
+  box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+}
+
+.intro-question {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  animation: fadeIn 1s ease-out 0.6s both;
+}
+
+.intro-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  animation: fadeIn 1s ease-out 0.8s both;
+}
+
+/* 버튼 */
+.start-button {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 1rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  animation: fadeIn 1s ease-out 1s both;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.start-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+.start-button:active {
+  transform: translateY(0);
+}
+
+.button-arrow {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.start-button:hover .button-arrow {
+  transform: translateX(5px);
+}
+
+/* 하단 힌트 */
+.intro-hint {
+  margin-top: 2rem;
+  font-size: 0.85rem;
+  color: #999;
+  animation: fadeIn 1s ease-out 1.2s both;
+}
+
+/* 배경 그리드 */
+.background-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(102, 126, 234, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(102, 126, 234, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  opacity: 0.5;
+  animation: fadeIn 2s ease-out;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes morph {
+  0%, 100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+  25% {
+    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+  }
+  50% {
+    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+  }
+  75% {
+    border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+  }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .intro-title {
+    font-size: 2.5rem;
+  }
+
+  .intro-question {
+    font-size: 1.5rem;
+  }
+
+  .intro-description {
+    font-size: 0.95rem;
+  }
+
+  .floating-shape {
+    width: 100px;
+    height: 100px;
+  }
+}

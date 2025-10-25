@@ -1,0 +1,231 @@
+.emotion-input {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.emotion-input-container {
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  border-radius: 24px;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+/* 헤더 */
+.emotion-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.emotion-title {
+  font-size: 2rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 0.5rem;
+}
+
+.emotion-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  font-weight: 400;
+}
+
+/* 문장 미리보기 */
+.sentence-preview {
+  background: linear-gradient(135deg, #f8f9ff 0%, #f0f2ff 100%);
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #e8ebff;
+  transition: all 0.4s ease;
+}
+
+.sentence-text {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #999;
+  text-align: center;
+  line-height: 1.6;
+  transition: all 0.4s ease;
+}
+
+.sentence-text.complete {
+  color: #667eea;
+  transform: scale(1.02);
+}
+
+/* 선택 영역 */
+.selection-area {
+  margin-bottom: 2rem;
+}
+
+.selection-group {
+  margin-bottom: 2rem;
+}
+
+.selection-group.optional {
+  opacity: 0.8;
+}
+
+.selection-label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.optional-label {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #999;
+}
+
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.tag {
+  background: #f5f7fa;
+  border: 2px solid transparent;
+  padding: 0.65rem 1.2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.tag:hover {
+  background: #e8ebf5;
+  transform: translateY(-2px);
+}
+
+.tag.selected {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: #667eea;
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.custom-tag {
+  background: white;
+  border: 2px dashed #ccc;
+  color: #999;
+}
+
+.custom-tag:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.custom-tag.selected {
+  background: white;
+  border: 2px dashed #667eea;
+  color: #667eea;
+  box-shadow: none;
+}
+
+.intensity-tag {
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+}
+
+.custom-input {
+  width: 100%;
+  margin-top: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-family: 'Noto Sans KR', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.custom-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* 제출 버튼 */
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Noto Sans KR', sans-serif;
+  margin-bottom: 1rem;
+}
+
+.submit-button.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+}
+
+.submit-button.active:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+}
+
+.submit-button.disabled {
+  background: #e0e0e0;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.input-hint {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #999;
+}
+
+/* 애니메이션 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .emotion-input-container {
+    padding: 2rem;
+  }
+
+  .emotion-title {
+    font-size: 1.5rem;
+  }
+
+  .sentence-text {
+    font-size: 1.2rem;
+  }
+
+  .tag {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
